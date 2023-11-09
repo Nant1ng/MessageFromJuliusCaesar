@@ -1,6 +1,6 @@
 ﻿namespace MFJC
 {
-    public class CaeserCipher
+    public class CaesarCipher
     {
         public string? _EncryptedMessage { get; set; }
         public string? _DecryptedMessage { get; set; }
@@ -23,9 +23,9 @@
             return _EncryptedMessage;
         }
 
-        public string DecryptedMessage(string _EncryptedMessage, int key)
+        public string DecryptedMessage(string text, int key)
         {
-            _DecryptedMessage = EncryptedMessage(_EncryptedMessage, 26 - key);
+            _DecryptedMessage = EncryptedMessage(text, 26 - key);
             return _DecryptedMessage;
         }
     }
