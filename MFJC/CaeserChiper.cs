@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MFJC
+﻿namespace MFJC
 {
     public class CaeserChiper
     {
         public string? _EncryptedMessage { get; set; }
+        public string? _DecryptedMessage { get; set; }
         public string EncrpytedMessage(string text, int key)
         {
             string encryptedText = "";
@@ -27,6 +21,12 @@ namespace MFJC
             }
             _EncryptedMessage = encryptedText;
             return _EncryptedMessage;
+        }
+
+        public string DecryptedMessage(string _EncryptedMessage, int key)
+        {
+            _DecryptedMessage = EncrpytedMessage(_EncryptedMessage, 26 - key);
+            return _DecryptedMessage;
         }
     }
 }
