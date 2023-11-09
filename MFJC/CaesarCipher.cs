@@ -1,6 +1,6 @@
 ﻿namespace MFJC
 {
-    public class CaesarCipher
+    public class CaesarCipher : ICaesarCipher
     {
         public string? _EncryptedMessage { get; set; }
         public string? _DecryptedMessage { get; set; }
