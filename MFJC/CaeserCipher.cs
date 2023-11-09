@@ -25,7 +25,7 @@
 
         public string DecryptedMessage(string _EncryptedMessage, int key)
         {
-            _DecryptedMessage = EncrpytedMessage(_EncryptedMessage, 26 - key);
+            _DecryptedMessage = EncryptedMessage(_EncryptedMessage, 26 - key);
             return _DecryptedMessage;
         }
     }
