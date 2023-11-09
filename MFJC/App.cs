@@ -32,6 +32,7 @@ namespace MFJC
                             Decrypter.Decryption();
                             break;
                         case 3:
+                            GuessingGame.GuessKey();
                             break;
                         case 0:
                             Environment.Exit(0);
