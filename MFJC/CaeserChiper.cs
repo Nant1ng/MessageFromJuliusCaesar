@@ -4,7 +4,7 @@
     {
         public string? _EncryptedMessage { get; set; }
         public string? _DecryptedMessage { get; set; }
-        public string EncrpytedMessage(string text, int key)
+        public string EncryptedMessage(string text, int key)
         {
             string encryptedText = "";
             foreach (char c in text)
