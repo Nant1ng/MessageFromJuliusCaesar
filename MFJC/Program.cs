@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            var myEncrypter = new CaeserCihper();
+            var myEncrypter = new CaeserCipher();
 
             Console.Write("Skriv din text du vill kryptera: ");
             string? inputValue = Console.ReadLine();

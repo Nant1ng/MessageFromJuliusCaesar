@@ -1,6 +1,6 @@
 ﻿namespace MFJC
 {
-    public class CaeserCihper
+    public class CaeserCipher
     {
         public string? _EncryptedMessage { get; set; }
         public string? _DecryptedMessage { get; set; }
