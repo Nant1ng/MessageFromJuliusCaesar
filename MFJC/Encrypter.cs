@@ -9,6 +9,7 @@
 
             while (isRunning)
             {
+                Console.Clear();
                 Console.Write("Skriv din text du vill kryptera: ");
                 string? inputValue = Console.ReadLine();
 
@@ -28,9 +29,10 @@
                     Console.WriteLine("Vill du dekrypta ett till meddlande? y/n");
                     string? choice = Console.ReadLine();
 
+                    // Behövs den?????
                     if (choice != null && choice == "y")
                     {
-                        Console.Clear();
+
                     }
                     else if (choice != null && choice == "n")
                     {

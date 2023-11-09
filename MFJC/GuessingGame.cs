@@ -1,22 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Channels;
-using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
-
-namespace MFJC
+﻿namespace MFJC
 {
     public class GuessingGame
     {
         public static string EncryptedText = "Rikard > Richard";
         public static void GuessKey()
         {
-            var myDecrypter = new CaesarCipher();
+            CaesarCipher myDecrypter = new CaesarCipher();
             string encryptedText = "";
-            var ranKey = new Random();
+            Random ranKey = new Random();
             int key = (int)(ranKey.Next(26));
             foreach (char c in EncryptedText)
             {
@@ -29,30 +20,33 @@ namespace MFJC
                 {
                     encryptedText += c;
                 }
-                
+
             }
             Console.Clear();
-            // Console.WriteLine(key);
+            Console.WriteLine(key);
             Console.WriteLine($"Guess this word: {encryptedText}");
             Console.Write("Enter a key value 1-26: ");
+
             bool isPlaying = true;
+
             while (isPlaying)
             {
-                
+
                 string? inputValue = Console.ReadLine();
                 bool intCheck = int.TryParse(inputValue, out int guessedKey);
-                if (intCheck)
+                if (intCheck && guessedKey > 0 && guessedKey < 27)
                 {
                     string decryptedMessage = myDecrypter.EncryptedMessage(encryptedText, 26 - guessedKey);
                     if (decryptedMessage == "Rikard > Richard")
                     {
-                        Console.WriteLine($"Correct Guessed!: {decryptedMessage}");
+                        Console.Clear();
+                        Console.WriteLine($"Correct Guessed!: {encryptedText} = {decryptedMessage}");
                         isPlaying = false;
                         Console.ReadLine();
                     }
                     else
                     {
-                        Console.WriteLine($"{decryptedMessage}");
+                        Console.WriteLine($"Your guess: {decryptedMessage}");
                         Console.Write("Wrong! Guess again: ");
                     }
                 }

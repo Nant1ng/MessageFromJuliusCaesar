@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MFJC
+﻿namespace MFJC
 {
     public class App
     {
@@ -14,6 +8,7 @@ namespace MFJC
 
             while (!exitMenu)
             {
+                Console.Clear();
                 Console.WriteLine("1. Encrypted a Message.");
                 Console.WriteLine("2. Decrypted a Message.");
                 Console.WriteLine("3. Would you like to play guessing game? ");
